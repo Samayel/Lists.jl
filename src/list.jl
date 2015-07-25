@@ -40,7 +40,7 @@ start{T}(l::List{T})=l.node.next
 done{T}(l::List{T}, n::ListNode{T})=(n==l.node)
 next{T}(l::List{T}, n::ListNode{T})=(n.data, n.next)
 
-immutable type ListIndexIterator{T}
+immutable ListIndexIterator{T}
     l::List{T}
 end
 

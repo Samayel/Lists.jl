@@ -41,7 +41,7 @@ start{T}(l::SList{T})=l.node.next
 done{T}(l::SList{T}, n::SListNode{T})=(n==l.node)
 next{T}(l::SList{T}, n::SListNode{T})=(n.data, n.next)
 
-immutable type SListIndexIterator{T}
+immutable SListIndexIterator{T}
     l::SList{T}
 end
 
