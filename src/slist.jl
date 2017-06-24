@@ -8,8 +8,8 @@ export SList, SListNode, indexed
 type SListNode{T}
     next::SListNode{T}
     data::T
-    SListNode()=(x=new(); x.next=x; x)
-    SListNode(n::SListNode{T}, d::T)=new(n, d)
+    SListNode{T}() where T=(x=new(); x.next=x; x)
+    SListNode{T}(n::SListNode{T}, d::T) where T=new(n, d)
 end
 
 
@@ -17,7 +17,7 @@ end
 type SList{T}
     # node is always the last element. Points to the first element.
     node::SListNode{T}
-    SList()=new(SListNode{T}())
+    SList{T}() where T=new(SListNode{T}())
 end
 
 function show{T}(io::IO, l::SList{T})

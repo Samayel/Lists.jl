@@ -7,15 +7,15 @@ type ListNode{T}
     prev::ListNode{T}
     next::ListNode{T}
     data::T
-    ListNode()=(x=new(); x.prev=x; x.next=x; x)
-    ListNode(p, n, d)=new(p, n, d)
+    ListNode{T}() where T=(x=new(); x.prev=x; x.next=x; x)
+    ListNode{T}(p, n, d) where T=new(p, n, d)
 end
 
 
 # Doubly linked list.
 type List{T}
     node::ListNode{T}
-    List()=new(ListNode{T}())
+    List{T}() where T=new(ListNode{T}())
 end
 
 
